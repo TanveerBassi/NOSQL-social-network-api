@@ -1,24 +1,26 @@
-const express = require("express");
-const mongoose = require("mongoose");
 require("dotenv").config();
 
+const express = require("express");
+
+const connectToDatabase = require("./config/connection");
+
+const routes = require("./routes");
+
+const PORT = process.env.PORT || 4000;
+
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use(routes);
+
 const init = async () => {
-  await mongoose.connect(
-    process.env.MONGODB_URI ||
-      `mongodb://localhost:27017/${process.env.DB_NAME}`,
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  );
+  // establish a connection with database
+  await connectToDatabase();
+
   app.listen(PORT, () => {
-    console.log(`API server running on port ${PORT}!`);
+    console.log(`Server running on http://localhost:${PORT}`);
   });
 };
 
