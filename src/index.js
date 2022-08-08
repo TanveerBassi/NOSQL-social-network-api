@@ -1,27 +1,36 @@
-require("dotenv").config();
-
+// import express
 const express = require("express");
 
+// internal imports
+const routes = require("./routes");
 const connectToDatabase = require("./config/connection");
 
-const routes = require("./routes");
-
-const PORT = process.env.PORT || 4000;
-
+// new instance of app created
 const app = express();
 
+// declare a port
+const PORT = process.env.PORT || 4000;
+
+// middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// use internal routers via the express module
 app.use(routes);
 
+// fn to create connection and listen to port
 const init = async () => {
-  // establish a connection with database
-  await connectToDatabase();
+  try {
+    // call fn to connect to mongoDB
+    await connectToDatabase();
 
-  app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-  });
+    // server listen on PORT
+    app.listen(PORT, () => {
+      console.log(`Server running on http://localhost:${PORT}`);
+    });
+  } catch (error) {
+    console.log(`[ERROR]: Failed to start server | ${error.message}`);
+  }
 };
 
 init();
