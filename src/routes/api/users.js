@@ -6,7 +6,7 @@ const {
   createUser,
   updateUserById,
   deleteUserById,
-} = require("../../controllers/api/users");
+} = require("../../controllers/users");
 const friends = require("./friends");
 
 const router = Router();

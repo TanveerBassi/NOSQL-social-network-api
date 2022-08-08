@@ -13,9 +13,9 @@
     "node-bin-setup": "^1.1.0"
   },
   "scripts": {
-    "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "seed": "node src/seeds/index.js"
+    "seed": "node src/seeds/index.js",
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
