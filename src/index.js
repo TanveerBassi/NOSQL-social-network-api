@@ -1,36 +1,35 @@
-// import express
+//connect to db
+require("dotenv").config();
+
 const express = require("express");
+const mongoose = require("mongoose");
 
-// internal imports
 const routes = require("./routes");
-const connectToDatabase = require("./config/connection");
 
-// new instance of app created
-const app = express();
-
-// declare a port
 const PORT = process.env.PORT || 4000;
 
-// middleware
+const app = express();
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// use internal routers via the express module
 app.use(routes);
 
-// fn to create connection and listen to port
 const init = async () => {
-  try {
-    // call fn to connect to mongoDB
-    await connectToDatabase();
+  const DB_NAME = process.env.DB_NAME;
+  const MONGODB_URI =
+    process.env.MONGODB_URI || `mongodb://127.0.0.1:27017/social_db`;
 
-    // server listen on PORT
-    app.listen(PORT, () => {
-      console.log(`Server running on http://localhost:${PORT}`);
-    });
-  } catch (error) {
-    console.log(`[ERROR]: Failed to start server | ${error.message}`);
-  }
+  const options = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  };
+
+  await mongoose.connect(MONGODB_URI, options);
+
+  app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
 };
 
 init();
