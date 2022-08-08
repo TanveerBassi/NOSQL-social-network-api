@@ -3,7 +3,7 @@ const { Router } = require("express");
 const {
   createReactionForThought,
   deleteReactionByThought,
-} = require("../../controllers/api/reactions");
+} = require("../../controllers/reactions");
 
 const router = Router({ mergeParams: true });
 

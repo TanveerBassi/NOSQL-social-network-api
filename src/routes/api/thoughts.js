@@ -6,7 +6,7 @@ const {
   createThought,
   updateThoughtById,
   deleteThoughtById,
-} = require("../../controllers/api/thoughts");
+} = require("../../controllers/thoughts");
 const reactions = require("./reactions");
 
 const router = Router();

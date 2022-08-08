@@ -3,7 +3,7 @@ const { Router } = require("express");
 const {
   createFriendForUser,
   deleteFriendByUser,
-} = require("../../controllers/api/friends");
+} = require("../../controllers/friends");
 
 const router = Router({ mergeParams: true });
 
