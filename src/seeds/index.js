@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const connection = require("../../config/connection");
 
 const { User, Thought } = require("../models");
 
@@ -7,10 +8,7 @@ const thoughts = require("./data/thoughts");
 
 const init = async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/socialNetworkDb", {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    connection();
 
     console.log("[INFO]: Database connection successful");
 
@@ -48,8 +46,6 @@ const init = async () => {
 
     await Promise.all(promises);
     await Promise.all(friendsPromises);
-
-    await mongoose.disconnect();
   } catch (error) {
     console.log(`[INFO]: Database connection failed | ${error.message}`);
   }
