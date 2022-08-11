@@ -16,7 +16,7 @@ app.use(routes);
 const init = async () => {
   try {
     await mongoose.connect(
-      "mongodb://localhost:27017/NOSQL-social-network-api",
+      "mongodb://127.0.0.1:27017/NOSQL-social-network-api",
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
