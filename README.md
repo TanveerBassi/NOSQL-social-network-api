@@ -13,7 +13,7 @@ An API for a social network web application where users can share their thoughts
 
 # Demo
 
-[Demo](https://duckduckgo.com)
+[Demo](https://drive.google.com/file/d/1GLsgX0fVuRxwnCrY1_SqQJ7yJKIqYqI5/view)
 
 # Installation
 
