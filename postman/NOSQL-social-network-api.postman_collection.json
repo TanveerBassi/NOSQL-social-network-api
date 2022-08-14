@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "e13804bb-a7e6-4d1a-8529-516c7cfe8c11",
+		"name": "NOSQL-social-network-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21648248"
+	},
+	"item": [
+		{
+			"name": "getAllUsers",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getAllUsersById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/users/62f6bfaa053dde609f703652",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"62f6bfaa053dde609f703652"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userName\": \"Cookie\",\r\n\"email\": \"cookie@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUserById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"userName\": \"Lacey\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/users/62f6bfaa053dde609f703652",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"62f6bfaa053dde609f703652"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/users/62f6bfaa053dde609f703655",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"62f6bfaa053dde609f703655"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createFriend",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"62f6bfaa053dde609f703652\",\r\n    \"friendId\": \"62f6c2636fd9a69724f620c1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/users/62f6bfaa053dde609f703652/friends",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"62f6bfaa053dde609f703652",
+						"friends"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteFriend",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/users/62f6bfaa053dde609f703652/friends/62f6c2636fd9a69724f620c1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"62f6bfaa053dde609f703652",
+						"friends",
+						"62f6c2636fd9a69724f620c1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllThoughts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/thoughts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"thoughts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllThoughtsById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/thoughts/62f6bfaa053dde609f703658",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"thoughts",
+						"62f6bfaa053dde609f703658"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createThought - update later",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"thoughtText\": \"Where would you like to go in the world?\",\r\n    \"userName\": \"Cookie\",\r\n    \"_id\": \"62f6c2636fd9a69724f620c1\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/thoughts/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"thoughts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteThoughtById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/thoughts/62f6bfaa053dde609f70365d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"thoughts",
+						"62f6bfaa053dde609f70365d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateThought",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"thoughtText\": \"Hi this is a thought?\",\r\n            \"createdAt\": \"12-08-2022 22:01\",\r\n            \"userName\": \"Kevin\",\r\n            \"reactions\": [\r\n                {\r\n                    \"reactionBody\": \"I don’t know, but the flag is a big plus.\",\r\n                    \"userName\": \"Gru\",\r\n                    \"createdAt\": \"12-08-2022 22:01\",\r\n                    \"_id\": \"62f6bfaa053dde609f703659\"\r\n                }\r\n            ],\r\n            \"__v\": 0,\r\n            \"reactionCount\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/thoughts/62f6bfaa053dde609f703658",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"thoughts",
+						"62f6bfaa053dde609f703658"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createReaction - update later",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/thoughts/id/reaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"thoughts",
+						"id",
+						"reaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteReaction",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/thoughts/62f6bfaa053dde609f703658/reactions/62f6bfaa053dde609f703659",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"thoughts",
+						"62f6bfaa053dde609f703658",
+						"reactions",
+						"62f6bfaa053dde609f703659"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
